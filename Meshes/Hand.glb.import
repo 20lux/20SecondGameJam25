@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://eq107wxvk0m0"
-path="res://.godot/imported/wall.glb-31e75d359012441b370bc9a8fc511724.scn"
+uid="uid://bx182uqbx7g5k"
+path="res://.godot/imported/Hand.glb-7ba67b3b7f1230a9e589c5d173f6f7e8.scn"
 
 [deps]
 
-source_file="res://Audio/wall.glb"
-dest_files=["res://.godot/imported/wall.glb-31e75d359012441b370bc9a8fc511724.scn"]
+source_file="res://Meshes/Hand.glb"
+dest_files=["res://.godot/imported/Hand.glb-7ba67b3b7f1230a9e589c5d173f6f7e8.scn"]
 
 [params]
 

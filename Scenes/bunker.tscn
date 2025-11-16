@@ -1,10 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://cseyq3vlj1bu0"]
+[gd_scene load_steps=7 format=3 uid="uid://u4v6jaaa5h4v"]
 
 [ext_resource type="PackedScene" uid="uid://ccfqu1g6oft7g" path="res://Player/player.tscn" id="1_nejuk"]
 [ext_resource type="PackedScene" uid="uid://c1oqnvyd1uxq5" path="res://Interactables/toilet.tscn" id="2_xxrj8"]
 [ext_resource type="PackedScene" uid="uid://cq4cays2oyouk" path="res://Interactables/wall.tscn" id="3_qv8o1"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xxrj8"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_qv8o1"]
+sky_material = SubResource("ProceduralSkyMaterial_xxrj8")
+
+[sub_resource type="Environment" id="Environment_gio65"]
+background_mode = 2
+sky = SubResource("Sky_qv8o1")
+tonemap_mode = 2
+
 [node name="Bunker" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gio65")
 
 [node name="Player" parent="." instance=ExtResource("1_nejuk")]
 
