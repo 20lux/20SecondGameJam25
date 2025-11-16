@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1oqnvyd1uxq5"]
+
+[ext_resource type="ArrayMesh" uid="uid://bkrbpq5w4wvht" path="res://Meshes/toilet.obj" id="1_u2gow"]
+[ext_resource type="Script" uid="uid://cv52upc00eprr" path="res://Interactables/toilet.gd" id="1_wux4o"]
+[ext_resource type="AudioStream" uid="uid://dpu8arlu8yffj" path="res://Audio/boop_01.wav" id="3_x83ec"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6byul"]
+size = Vector3(0.43920898, 0.5991211, 0.55578613)
+
+[node name="Toilet" type="StaticBody3D"]
+script = ExtResource("1_wux4o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16760254, 0.20043945, -0.22210693)
+shape = SubResource("BoxShape3D_6byul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_u2gow")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_x83ec")
+
+[connection signal="interacted" from="." to="." method="_on_interacted"]
