@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c48ry80b5nugi"]
+
+[ext_resource type="PackedScene" uid="uid://dliwi2ukr2mwg" path="res://Meshes/RoomTest.glb" id="1_4gnrb"]
+[ext_resource type="Texture2D" uid="uid://spcctn1p4ho5" path="res://Textures/Background_Panorama_Placeholder.png" id="2_y7kil"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="RoomTest" parent="." instance=ExtResource("1_4gnrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13514686, 1.1920929e-07, -0.3588643)
+
+[node name="BackgroundPanorama" type="Sprite3D" parent="RoomTest"]
+transform = Transform3D(2.7660525e-07, 0, 0.9999998, 0, 2.574034, 0, -4.6406655, 0, 5.9604638e-08, -30.440668, 3.8530102, 0.3588643)
+double_sided = false
+texture = ExtResource("2_y7kil")
