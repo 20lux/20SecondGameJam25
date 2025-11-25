@@ -1,20 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://u4v6jaaa5h4v"]
+[gd_scene load_steps=9 format=3 uid="uid://u4v6jaaa5h4v"]
 
 [ext_resource type="PackedScene" uid="uid://ccfqu1g6oft7g" path="res://Player/player.tscn" id="1_nejuk"]
 [ext_resource type="PackedScene" uid="uid://c1oqnvyd1uxq5" path="res://Interactables/toilet.tscn" id="2_xxrj8"]
 [ext_resource type="PackedScene" uid="uid://cq4cays2oyouk" path="res://Interactables/wall.tscn" id="3_qv8o1"]
+[ext_resource type="PackedScene" uid="uid://ca5jgmbbh5ocr" path="res://Meshes/Button_Console.glb" id="5_8imk4"]
+[ext_resource type="PackedScene" uid="uid://dx7kbgyhb8wum" path="res://Meshes/Countermeasures.glb" id="5_gio65"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xxrj8"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lwc5i"]
 
-[sub_resource type="Sky" id="Sky_qv8o1"]
-sky_material = SubResource("ProceduralSkyMaterial_xxrj8")
+[sub_resource type="Sky" id="Sky_8imk4"]
+sky_material = SubResource("ProceduralSkyMaterial_lwc5i")
 
 [sub_resource type="Environment" id="Environment_gio65"]
 background_mode = 2
-sky = SubResource("Sky_qv8o1")
-tonemap_mode = 2
+sky = SubResource("Sky_8imk4")
+tonemap_white = 4.07
 
 [node name="Bunker" type="Node3D"]
 
@@ -22,12 +22,19 @@ tonemap_mode = 2
 environment = SubResource("Environment_gio65")
 
 [node name="Player" parent="." instance=ExtResource("1_nejuk")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.4042483, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 
 [node name="Toilet" parent="." instance=ExtResource("2_xxrj8")]
-transform = Transform3D(-0.8713937, 0, 0.49058443, 0, 1, 0, -0.49058443, 0, -0.8713937, 0.22509003, 0, -2.4260454)
+transform = Transform3D(0.15734565, 0, -3.2011352, 0, 3.2050004, 0, 3.2011352, 0, 0.15734565, -1.4196631, -0.9775629, 0.53882444)
 
 [node name="Wall" parent="." instance=ExtResource("3_qv8o1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8323371, -2.3841858e-07, -2.966259)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8934691, -2.3841858e-07, -2.966259)
 prompt_message = "Wall"
+
+[node name="Button_Console" parent="." instance=ExtResource("5_8imk4")]
+transform = Transform3D(0.18701647, 0, 0.32392207, 0, 0.37403297, 0, -0.32392207, 0, 0.18701647, 0.74355567, -0.08756144, -2.0469275)
+
+[node name="Countermeasures" parent="." instance=ExtResource("5_gio65")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38443542, -1.862801, -0.18823588)
