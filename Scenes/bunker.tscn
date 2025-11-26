@@ -1,18 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://u4v6jaaa5h4v"]
+[gd_scene load_steps=8 format=3 uid="uid://u4v6jaaa5h4v"]
 
 [ext_resource type="PackedScene" uid="uid://ccfqu1g6oft7g" path="res://Player/player.tscn" id="1_nejuk"]
+[ext_resource type="Shader" uid="uid://bx2l6uoh3pjhb" path="res://Shaders/sky.gdshader" id="1_xxrj8"]
 [ext_resource type="PackedScene" uid="uid://dliwi2ukr2mwg" path="res://Meshes/RoomTest.glb" id="2_7hew7"]
+[ext_resource type="Texture2D" uid="uid://spcctn1p4ho5" path="res://Textures/Background_Panorama_Placeholder.png" id="2_qv8o1"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xxrj8"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qv8o1"]
+shader = ExtResource("1_xxrj8")
+shader_parameter/sky_texture = ExtResource("2_qv8o1")
+shader_parameter/sun_pos = Vector3(34.855, 25.15, -100)
+shader_parameter/color = Color(0.52632874, 0.7312947, 0.8168722, 1)
 
-[sub_resource type="Sky" id="Sky_qv8o1"]
-sky_material = SubResource("ProceduralSkyMaterial_xxrj8")
+[sub_resource type="Sky" id="Sky_gio65"]
+sky_material = SubResource("ShaderMaterial_qv8o1")
 
 [sub_resource type="Environment" id="Environment_gio65"]
 background_mode = 2
-sky = SubResource("Sky_qv8o1")
+sky = SubResource("Sky_gio65")
 tonemap_mode = 2
 
 [node name="Bunker" type="Node3D"]
@@ -27,3 +31,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -3)
 
 [node name="ControlCentre" parent="." instance=ExtResource("2_7hew7")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.28135777, 4.7683716e-07, -4.177231)
+
+[node name="Meteor" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.855, 25.15, -100)
+radius = 6.726112

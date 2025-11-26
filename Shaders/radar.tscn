@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bisvivkr6iumn"]
+
+[ext_resource type="Shader" uid="uid://bn8q4ost7riw5" path="res://Shaders/radar.gdshader" id="1_mht4n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pk8qc"]
+shader = ExtResource("1_mht4n")
+shader_parameter/line_thickness = 0.00999999977648
+shader_parameter/speed = 5.0
+shader_parameter/line_color = Color(0, 1, 0, 1)
+shader_parameter/zoom = 10.0
+shader_parameter/line_count = 10
+shader_parameter/line_zoom = 6.0000000894072
+shader_parameter/step_size = 4.60000006854552
+shader_parameter/fade_factor = 0.99999998137332
+shader_parameter/line_factor = 0.20000000298024
+
+[node name="ColorRect" type="ColorRect"]
+material = SubResource("ShaderMaterial_pk8qc")
+offset_right = 600.0
+offset_bottom = 400.0
