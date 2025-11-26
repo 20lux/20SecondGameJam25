@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://u4v6jaaa5h4v"]
+[gd_scene load_steps=6 format=3 uid="uid://u4v6jaaa5h4v"]
 
 [ext_resource type="PackedScene" uid="uid://ccfqu1g6oft7g" path="res://Player/player.tscn" id="1_nejuk"]
-[ext_resource type="PackedScene" uid="uid://c1oqnvyd1uxq5" path="res://Interactables/toilet.tscn" id="2_xxrj8"]
-[ext_resource type="PackedScene" uid="uid://cq4cays2oyouk" path="res://Interactables/wall.tscn" id="3_qv8o1"]
+[ext_resource type="PackedScene" uid="uid://dliwi2ukr2mwg" path="res://Meshes/RoomTest.glb" id="2_7hew7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xxrj8"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -22,12 +21,9 @@ tonemap_mode = 2
 environment = SubResource("Environment_gio65")
 
 [node name="Player" parent="." instance=ExtResource("1_nejuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -3)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 
-[node name="Toilet" parent="." instance=ExtResource("2_xxrj8")]
-transform = Transform3D(-0.8713937, 0, 0.49058443, 0, 1, 0, -0.49058443, 0, -0.8713937, 0.22509003, 0, -2.4260454)
-
-[node name="Wall" parent="." instance=ExtResource("3_qv8o1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8323371, -2.3841858e-07, -2.966259)
-prompt_message = "Wall"
+[node name="ControlCentre" parent="." instance=ExtResource("2_7hew7")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.28135777, 4.7683716e-07, -4.177231)
