@@ -4,8 +4,8 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	physical_bone_simulator_3d.physical_bones_start_simulation()
-
+	#physical_bone_simulator_3d.physical_bones_start_simulation()
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
