@@ -20,9 +20,12 @@ config/icon="res://Meshes/icon.svg"
 folder_colors={
 "res://Audio/": "red",
 "res://Interactables/": "green",
+"res://Material/": "teal",
 "res://Meshes/": "orange",
 "res://Player/": "pink",
-"res://Scenes/": "yellow"
+"res://Scenes/": "yellow",
+"res://Shaders/": "purple",
+"res://Textures/": "pink"
 }
 
 [input]
